@@ -1,36 +1,21 @@
 {% extends 'base.html' %}
 {% block title %} Login {% endblock %}
 
-
 {% block content %} 
-    {% if alert %}
-        <script>alert('{{alert}}')</script>
-    {% endif %}
-    <img class="logo_ReFashioned" src="/static/img/logo_ReFashioned_v2_733.png" alt="">
-    <div class="container-login">
-        <p>Iniciar sesion</p>
-        <form action="", method="post" >
-            <div class="row">
-                <div class="col">
-                    <input class="inp-login" type="email" name="email" placeholder="Correo" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input class="inp-login" type="password" name="password" placeholder="Contraseña" required>
-                </div>
-            </div>
+    <div class="container-img">
+        <h1>SOPORTE SONY</h1>
+        <img class="login-img" src="static/imgs/login-img.png" alt="">
 
-            <div class="row"> 
-                <div class="col">
-                    <input class="inp-btn btn-green" type="submit" value="Ingresar">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <a href="/signin"><input class="inp-btn btn-blue" type="button" value="Crear cuenta"></a>
-                </div>
-            </div>
-        </form>
+        <div class="container-login">
+            <p>CONTACTA CON NUESTRO SOPORTE</p>
+            <form action="", method="post" >
+                <input class="inp-login" type="name" name="nombre" placeholder="Nombre" required>
+                <input class="inp-login" type="email" name="correo" placeholder="Correo" required>
+                <input class="inp-login" type="number" name="numero" placeholder="Numero" required>
+                <input class="inp-login" type="number" name="cedula" placeholder="Cedula" required>
+                <input class="inp-login" type="text" name="pais" placeholder="Pais" required>
+                <input class="inp-btn btn-blue" type="submit" value="Obtener soporte">
+            </form>
+        </div>
     </div>
 {% endblock %}

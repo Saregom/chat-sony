@@ -24,27 +24,20 @@
 {% block content %}
 <div class="container-chat">
     <div class="header-chat">
-        <h3>Salir</h3>
+        <a href="/salir"><h3>Salir</h3></a>
         <h1>Sony Chat Bot 1</h1>
     </div>
 
     <div class="aside-and-body">
         <div class="aside-chats">
+            <a href="/backChat"><input class="back-chat back" type="image" src="static/imgs/back.png">
+            </a>
+            <input class="back-chat" type="image" src="static/imgs/bot.png">
         </div>
 
         <div class="chat-body">
             <div class="chat-content0">
                 <div class="chat-content" id="hi">
-                
-                    <!-- {% for message in messages %}
-                        <div class="mssg mssg1">
-                            {% for txt in message %}
-                                <label>{{txt}}</label>
-                            {% endfor %}
-                        </div>
-                    {% endfor %} -->
-                
-                
                 {% for message in messages %}
                     {% if message['from'] == 'bot'%}
                         <div class="mssg mssg1">
@@ -65,7 +58,7 @@
             
             <form class="message-div" action="/sendMessage" method="post">
                 <input class="message-area" name="message" type="text" autofocus>
-                <input class="btn-send" type="submit" value=">">
+                <input class="btn-send" type="image" src="static/imgs/send.png" width="5" height="5">
             </form>
 
             <script>

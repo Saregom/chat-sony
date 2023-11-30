@@ -63,6 +63,12 @@ def backChat():
         var.messages.pop()
     return redirect('/chat')
 
+@app.route('/openFile')
+def openFile():
+    var.messages.append({'from':'user', 'msg':format('img.jpg')})
+    var.messages.append({'from':'bot', 'msg':format('Imagen cargada con exito!')})
+    return redirect('/chat')
+
 @app.route('/sendMessage', methods=['POST'])
 def sendMessage():
     var.opcion_correcta = True
@@ -131,7 +137,6 @@ def sendMessage():
 
         var.messages.append({'from':'user', 'msg':format(request.form['message'])})
         var.messages.append({'from':'bot', 'msg':format(var.actual_message)})
-
 
         if not var.opcion_correcta:
             var.answer_user.pop()

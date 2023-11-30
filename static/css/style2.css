@@ -171,6 +171,33 @@
 }
 
 /* ----------------- AREA MENSAJE -----------------*/
+.div-file{
+    position: absolute;
+    left: 35px;
+    opacity: 0;
+}
+.div-file input{
+    width: 20px;
+}
+.file2{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 30px;
+    border-radius: 100px;
+    background-color: rgb(178, 179, 206);
+    /* padding: 5px; */
+}
+.file2 a{
+    position: absolute;
+    width: 70%;
+}
+.file2 img{
+    width: 100%;
+}
 .message-div{
     width: 100%;
     background-color: rgb(97, 98, 128);

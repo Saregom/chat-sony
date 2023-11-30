@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block navbar %} 
+<!-- <div class="container-page-nav">
+    <div class="page-nav">
+        <a href="/home"><img src="/static/img/logo_ReFashioned_v2_733.png"></a>
+        {% if session['user_type'] == 'CLIENTE' %}
+            <a href="/products">Productos</a>
+        {% elif session['user_type'] == 'ADMIN' %}
+            <a href="/manage-products">Manejar productos</a>
+        {% endif %}
+
+        <a class="nav-user-type" href="/account">{{session['user_type']}}</a>
+        <label for="">|</label>
+        <a class="nav-account" href="/account"><img class='avatar' src='static/img/avatar.png' alt='Profile'></img></a>
+    </div>
+</div> -->
+{% endblock %}
+
+{% block front_page %}
+{% endblock %}
+
+{% block content %}
+<div class="container-chat">
+    <div class="header-chat">
+        <h3>Salir</h3>
+        <h1>Sony Chat Bot 1</h1>
+    </div>
+
+    <div class="aside-and-body">
+        <div class="aside-chats">
+        </div>
+
+        <div class="chat-body">
+            <div class="chat-content">
+                {% for message in messages %}
+                    {% if message['from'] == 'bot'%}
+                        <div class="mssg mssg1">
+                            {{message['msg'] }}
+                        </div>
+                    {% elif message['from'] == 'user' %}
+                        <div class="mssg mssg2">
+                            {{ message['msg'] }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <form class="message-div" action="/sendMessage" method="post">
+                <input class="message-area" name="message" type="text">
+                <input class="btn-send" type="submit" value=">">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

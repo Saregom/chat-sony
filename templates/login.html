@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+
+
+{% block content %} 
+    {% if alert %}
+        <script>alert('{{alert}}')</script>
+    {% endif %}
+    <img class="logo_ReFashioned" src="/static/img/logo_ReFashioned_v2_733.png" alt="">
+    <div class="container-login">
+        <p>Iniciar sesion</p>
+        <form action="", method="post" >
+            <div class="row">
+                <div class="col">
+                    <input class="inp-login" type="email" name="email" placeholder="Correo" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input class="inp-login" type="password" name="password" placeholder="Contraseña" required>
+                </div>
+            </div>
+
+            <div class="row"> 
+                <div class="col">
+                    <input class="inp-btn btn-green" type="submit" value="Ingresar">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="/signin"><input class="inp-btn btn-blue" type="button" value="Crear cuenta"></a>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

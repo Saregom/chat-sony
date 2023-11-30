@@ -33,23 +33,45 @@
         </div>
 
         <div class="chat-body">
-            <div class="chat-content">
+            <div class="chat-content0">
+                <div class="chat-content" id="hi">
+                
+                    <!-- {% for message in messages %}
+                        <div class="mssg mssg1">
+                            {% for txt in message %}
+                                <label>{{txt}}</label>
+                            {% endfor %}
+                        </div>
+                    {% endfor %} -->
+                
+                
                 {% for message in messages %}
                     {% if message['from'] == 'bot'%}
                         <div class="mssg mssg1">
-                            {{message['msg'] }}
+                            {% for txt in message['msg'] %}
+                                <label>{{txt}}</label>
+                            {% endfor %}
                         </div>
                     {% elif message['from'] == 'user' %}
                         <div class="mssg mssg2">
-                            {{ message['msg'] }}
+                            {% for txt in message['msg'] %}
+                                <label>{{txt}}</label>
+                            {% endfor %}
                         </div>
                     {% endif %}
                 {% endfor %}
             </div>
+            </div>
+            
             <form class="message-div" action="/sendMessage" method="post">
-                <input class="message-area" name="message" type="text">
+                <input class="message-area" name="message" type="text" autofocus>
                 <input class="btn-send" type="submit" value=">">
             </form>
+
+            <script>
+                let miDiv = document.getElementById('hi');
+                miDiv.scrollTop = miDiv.scrollHeight;
+            </script>
         </div>
     </div>
 </div>
